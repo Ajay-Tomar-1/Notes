@@ -1,0 +1,89 @@
+http://callbackhell.com/ (In Last)
+
+Promises are a way to write async code that still appears as though it is executing in a top-down way, and handles more types of errors due to 
+encouraged use of try/catch style error handling.
+
+Indexing  :  https://www.guru99.com/indexing-in-database.html
+Indexing is a data structure technique which allows you to quickly retrieve records from a database file. An Index is a small table having only two columns.
+The first column comprises a copy of the primary or candidate key of a table. Its second column contains a set of pointers for holding the address of the 
+disk block where that specific key value stored.
+
+An index –
+Takes a search key as input
+Efficiently returns a collection of matching records.
+
+The biggest benefit of Indexing is that it helps you to reduce the total number of I/O operations needed to retrieve that data.
+The biggest drawback to performing the indexing database management system, you need a primary key on the table with a unique value.
+
+
+
+https://docs.mongodb.com/manual/aggregation/
+Aggregation
+Aggregation operations process data records and return computed results. Aggregation operations group values from multiple documents together, and can perform a variety of operations on the grouped data to return a single 
+result. MongoDB provides three ways to perform aggregation: the aggregation pipeline, the map-reduce function, and single purpose aggregation methods.
+
+
+
+https://stackoverflow.com/questions/40168478/find-and-findone-methods-in-mongodb-showing-different-results
+First of all, basic difference between findOne() and find():
+findOne() - if query matches, first document is returned, otherwise null.
+find() - no matter the number of documents matched, a cursor is returned, never null.
+So when put in an if condition, findOne() can convert to false when it doesn't match any document. As find() returns a cursor object and never returns null, 
+will convert to true when put in an if condition.
+
+The find() method will return an array, even if no documents match the search criteria. An empty array still exists, so it will act as truthy.
+findOne() will either return exactly one document, or undefined. Undefined, by definition, is a falsy value.
+When you know you will be searching for just one document, use findOne() to get a more accurate representation.
+
+
+
+https://www.geeksforgeeks.org/linked-list-vs-array/
+So Linked list provides the following two advantages over arrays 
+1) Dynamic size 
+2) Ease of insertion/deletion 
+
+Linked lists have the following drawbacks: 
+1) Random access is not allowed. We have to access elements sequentially starting from the first node. So we cannot do a binary search with linked lists. 
+2) Extra memory space for a pointer is required with each element of the list. 
+3) Arrays have better cache locality that can make a pretty big difference in performance.
+4) It takes a lot of time in traversing and changing the pointers.
+5)  It will be confusing when we work with pointers.
+
+
+
+The difference between these two, is that devDependencies are modules which are only required during development, while dependencies are modules which 
+are also required at runtime.
+
+https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies
+dependencies
+Dependencies that your project needs to run, like a library that provides functions that you call from your code.
+They are installed transitively (if A depends on B depends on C, npm install on A will install B and C).
+Example: lodash: your project calls some lodash functions.
+
+devDependencies
+Dependencies you only need during development or releasing, like compilers that take your code and compile it into javascript, test frameworks or documentation generators.
+They are not installed transitively (if A depends on B dev-depends on C, npm install on A will install B only).
+Example: grunt: your project uses grunt to build itself.
+
+peerDependencies
+Dependencies that your project hooks into, or modifies, in the parent project, usually a plugin for some other library or tool. It is just intended to be a check, making sure that the parent project (project that will depend on your project) has a dependency on the project you hook into. So if you make a plugin C that adds functionality to library B, then someone making a project A will need to have a dependency on B if they have a dependency on C.
+They are not installed (unless npm < 3), they are only checked for.
+Example: grunt: your project adds functionality to grunt and can only be used on projects that use grunt.
+
+
+
+Middleware is a software that acts as an intermediary between two applications or services to facilitate their communication.
+Common middleware examples include database middleware, application server middleware, message-oriented middleware, web middleware and transaction-processing monitors.
+
+Middleware functions are functions that have access to the request object (req), the response object (res), and the next function in the application’s 
+request-response cycle. The next function is a function in the Express router which, when invoked, executes the middleware succeeding the current middleware.
+
+Middleware functions can perform the following tasks:
+
+Execute any code.
+Make changes to the request and the response objects.
+End the request-response cycle.
+Call the next middleware in the stack.
+
+If the current middleware function does not end the request-response cycle, it must call next() to pass control to the next middleware function. Otherwise, 
+the request will be left hanging.

@@ -1,0 +1,58 @@
+// From PPT
+Externalized configuration - includes credentials, and network locations of external services such as databases and message brokers
+Logging - configuring of a logging framework such as log4j or logback
+Health checks - a url that a monitoring service can “ping” to determine the health of the application
+Metrics - measurements that provide insight into what the application is doing and how it is performing
+Distributed tracing - instrument services with code that assigns each external request an unique identifier that is passed between services.
+Circuit Breaker – provides stability while the system recovers from a failure and minimizes the impact on performance
+Service Discovery -  How does the client of a service - the API gateway or another service - discover the location of a service instance
+
+
+What is API Throttling?  Link: https://www.tibco.com/reference-center/what-is-api-throttling
+API throttling is the process of limiting the number of API requests a user can make in a certain period. An application programming interface (API) functions
+ as a gateway between a user and a software application. For example, when a user clicks the post button on social media, the button click triggers 
+ an API call. This API interacts with the web server of the social media application and performs the action of posting. This user could be a human or 
+ another software application.
+
+Organizations use API throttling with various goals, such as security, scalability, performance, monetization, authentication, and availability.
+
+
+How Does API Throttling Work?
+While there are various algorithms for API throttling, here are the basic steps in any API throttling algorithm:
+
+1. A client/user calls an API that interfaces with a web service or application.
+2. The API throttling logic checks if the current request exceeds the allowed number of API calls.
+3. If the request is within limits, the API performs as usual and completes the user’s task.
+4. If the request exceeds the limit, the API returns an error response to the user.
+5. The user will have to wait for a pre-agreed time period, or pay to make any more API calls.
+
+
+
+Link: https://www.f5.com/company/blog/the-art-of-scaling-containers-circuit-breakers#:~:text=Circuit%20breakers%20have%20been%20a,proxies%20for%20quite%20some%20time.&text=So%20after%20a%20(typically)%20configurable,though%20the%20process%20appears%20similar.
+Circuit breakers have been a part of load balancing proxies for quite some time. So after a (typically) configurable number of failures, a proxy will “break” 
+the circuit and refuse to attempt further connections.
+
+This is not the same as a retry, though the process appears similar.
+
+
+
+Link: https://www.f5.com/services/resources/glossary/load-balancer
+A load balancer is a device that acts as a reverse proxy and distributes network or application traffic across a number of servers. Load balancers are used 
+to increase capacity (concurrent users) and reliability of applications. They improve the overall performance of applications by decreasing the burden on 
+servers associated with managing and maintaining application and network sessions, as well as by performing application-specific tasks.
+
+Load balancers are generally grouped into two categories: Layer 4 and Layer 7. Layer 4 load balancers act upon data found in network and transport layer 
+protocols (IP, TCP, FTP, UDP). Layer 7 load balancers distribute requests based upon data found in application layer protocols such as HTTP.
+
+Requests are received by both types of load balancers and they are distributed to a particular server based on a configured algorithm. Some industry standard 
+algorithms are:
+Round robin
+Weighted round robin
+Least connections
+Least response time
+
+Layer 7 load balancers can further distribute requests based on application specific data such as HTTP headers, cookies, or data within the application 
+message itself, such as the value of a specific parameter.
+
+Load balancers ensure reliability and availability by monitoring the "health" of applications and only sending requests to servers and applications that can 
+respond in a timely manner.

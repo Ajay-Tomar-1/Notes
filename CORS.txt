@@ -1,0 +1,23 @@
+https://www.section.io/engineering-education/how-to-use-cors-in-nodejs-with-express/
+
+The client and server have a different origin from each other, i.e., accessing resources from a different server. In this case, trying to make a request 
+to a resource on the other server will fail.
+
+This is a security concern for the browser. CORS comes into play to disable this mechanism and allow access to these resources. CORS will add a response 
+header access-control-allow-origins and specify which origins are permitted. CORS ensures that we are sending the right headers.
+
+Therefore, a public server handling a public API will add a CORS related header to the response. The browser on the client machine will look at this 
+header and decide whether it is safe to deliver that response to the client or not.
+
+Use case
+Let’s say you’re using React to build a front-end application. Eventually, you’ll be connecting it to a back-end API. The app might run into an issue if 
+CORS is not set up. Simply because both the front end and the back end are from different origins from each other.
+
+CORS goes hand in hand with APIs. A good use case scenario of CORS is when developing RESTful APIs. For example, creating a Node.js RESTful API, similar 
+to this RESTful Web API in Node.js using PostgresSQL and Express.
+
+Conclusion
+When you deploy an application on the server, you should not accept requests from every domain. Instead, you should specify which origin can make requests 
+to your server.
+
+This way, you are able to block users who attempt to clone your site or make requests from an unauthorized servers. This is important an security measure.

@@ -1,0 +1,155 @@
+https://www.simplilearn.com/tutorials/aws-tutorial/aws-ec2?source=sl_frs_nav_playlist_video_clicked
+
+With over 32 percent of the entire world’s public cloud share, it’s no surprise that AWS serves more than 190 countries with scalable, reliable, and low-cost
+ infrastructure. One of its most powerful and commonly used services are Amazon EC2 (Elastic Cloud Compute).
+
+Amazon EC2 provides scalable computing capacity in the AWS cloud. Leveraging it enables organizations to develop and deploy applications faster, without 
+needing to invest in hardware upfront. Users can launch virtual servers, configure security and networking, and manage cookies from an intuitive dashboard. 
+
+Why is AWS EC2 important?
+You don’t require any hardware units
+Easily scalable (up or down)
+You only pay for what you use
+You have complete control
+Highly secure
+You can access your assets from anywhere in the world
+
+What is AWS EC2?
+Among the vast array of services that Amazon offers, EC2 is the core compute component of the technology stack. In practice, EC2 makes life easier for 
+developers by providing secure, and resizable compute capacity in the cloud. It greatly eases the process of scaling up or down, can be integrated into 
+several other services, and comes with a plan where you only pay for how much you use it. 
+
+Let’s look at EC2(Elastic Cloud Compute) in action.
+
+Use Case: Notifying Users about a Newsletter
+Imagine if your user base is enjoying your product. How would you let them know about the other services you offer? 
+
+That’s where AWS comes in. With Amazon Simple Notification Service (SNS), EC2, and Simple Storage Service (S3), you should be able to do everything you 
+want with ease. You’ll be able to notify users every time the company creates a newsletter, for example. 
+
+Here’s how:
+1. Create an AWS account 
+2. Set up an EC2 instance
+3. Create an SNS and a topic
+4. Make sure the topic is set to “public.”
+5. Add subscribers: 
+These are the individuals who have opted-in to be notified about your newsletter
+6. Create an S3 bucket
+7. Set up an event relating it with SNS: 
+A notification is sent to the company’s subscribers every time something is added to the bucket
+8. Sync the S3 bucket and AWS instance
+And that’s it: Your users will be notified.
+
+
+
+https://www.simplilearn.com/tutorials/aws-tutorial/aws-s3?source=sl_frs_nav_playlist_video_clicked
+Before AWS S3
+Organizations had a difficult time finding, storing, and managing all of your data. Not only that, running applications, delivering content to customers, 
+hosting high traffic websites, or backing up emails and other files required a lot of storage. Maintaining the organization’s repository was also expensive 
+and time-consuming for several reasons. Challenges included the following:
+-Having to purchase hardware and software components
+-Requiring a team of experts for maintenance
+-A lack of scalability based on your requirements
+-Data security requirements
+These are the issues AWS S3 would eventually solve. So, what exactly is AWS S3? 
+
+What is AWS S3?
+Amazon S3 (Simple Storage Service) provides object storage, which is built for storing and recovering any amount of information or data from anywhere over 
+the internet. It provides this storage through a web services interface. While designed for developers for easier web-scale computing, it provides 
+99.999999999 percent durability and 99.99 percent availability of objects. It can also store computer files up to 5 terabytes in size. 
+
+AWS S3 Benefits
+Some of the benefits of AWS S3 are: 
+-Durability
+-Low cost
+-Scalability
+-Availability
+-Security 
+-Flexibility
+-Simple data transfer
+
+
+
+https://www.simplilearn.com/tutorials/aws-tutorial/aws-iam?source=sl_frs_nav_playlist_video_clicked
+Why IAM?
+Before AWS or IAM, passwords were often shared in corporate environments in a very insecure manner: over the phone or through email. Often only one admin 
+password existed, which was commonly stored in a set location, or there was only one person who could reset it, and you needed to call the person to ask for 
+the admin password over the phone. That was not secure at all, because anybody could walk by and eavesdrop and then walk away with the password and access 
+to your system and information.
+
+Today we have a more secure communication tool: a third-party application called Slack, which is hosted on AWS. It helps people to share a document through 
+the application so that eavesdropping is eliminated.
+
+What is IAM?
+AWS Identity and Access Management (IAM) is a web service for securely controlling access to AWS resources. It enables you to create and control services 
+for user authentication or limit access to a certain set of people who use your AWS resources.
+
+How Does IAM Work?
+The IAM workflow includes the following six elements:
+1. A principal is an entity that can perform actions on an AWS resource. A user, a role or an application can be a principal.
+2. Authentication is the process of confirming the identity of the principal trying to access an AWS product. The principal must provide its credentials or 
+required keys for authentication.
+3. Request: A principal sends a request to AWS specifying the action and which resource should perform it.
+4. Authorization: By default, all resources are denied. IAM authorizes a request only if all parts of the request are allowed by a matching policy. After 
+authenticating and authorizing the request, AWS approves the action.
+5. Actions are used to view, create, edit or delete a resource.
+6. Resources: A set of actions can be performed on a resource related to your AWS account.
+
+Components of IAM-
+There are other basic components of IAM. First, we have the user; many users together form a group. Policies are the engines that allow or deny a connection 
+based on policy. Roles are temporary credentials that can be assumed to an instance as needed.
+
+-Users:
+An IAM user is an identity with an associated credential and permissions attached to it. This could be an actual person who is a user, or it could be an 
+application that is a user. With IAM, you can securely manage access to AWS services by creating an IAM user name for each employee in your organization. 
+Each IAM user is associated with only one AWS account. By default, a newly created user is not authorized to perform any action in AWS. The advantage of 
+having one-to-one user specification is that you can individually assign permissions to each user.
+
+-Groups:
+A collection of IAM users is an IAM group. You can use IAM groups to specify permissions for multiple users so that any permissions applied to the group are 
+applied to the individual users in that group as well. Managing groups is quite easy. You set permissions for the group, and those permissions are 
+automatically applied to all the users in the group. If you add another user to the group, the new user will automatically inherit all the policies and the 
+permissions already assigned to that group. This lessens the administrative burden.
+
+-Policies:
+An IAM policy sets permission and controls access to AWS resources. Policies are stored in AWS as JSON documents. Permissions specify who has access to the 
+resources and what actions they can perform. For example, a policy could allow an IAM user to access one of the buckets in Amazon S3. The policy would 
+contain the following information:
+1. Who can access it
+2. What actions that user can take
+3. Which AWS resources that user can access
+4. When they can be accessed
+
+In JSON format that would look like this:  //  Go to the above link
+
+There are two types of policies: managed policies and inline policies.
+-A managed policy is a default policy that you attach to multiple entities (users, groups, and roles) in your AWS account. Managed policies, whether they are
+ AWS-managed or customer-managed, are stand-alone identity-based policies attached to multiple users and/or groups.
+-Inline policies are policies that you create that are embedded directly into a single entity (user, group or role).
+
+-Roles:
+An IAM role is a set of permissions that define what actions are allowed and denied by an entity in the AWS console. It is similar to a user in that it can 
+be accessed by any type of entity (an individual or AWS service). Role permissions are temporary credentials.
+
+For example, you might want to allow a mobile app to use AWS resources, but you do not want it to save the key, credential or password. Or you might want to 
+give access to resources to a user who already has an identity defined outside of AWS, such as a user who already has Google or Facebook authentication. If 
+you want to provide someone with a service or let someone access resources in your account, you can use roles for that purpose too. You also might want to 
+grant temporary access to your account to a third party, such as a consultant or an auditor. They’re not permanent users, just users with temporary access 
+to your environment.
+
+Features of IAM
+To review, here are some of the main features of IAM:
+
+-Shared access to the AWS account. The main feature of IAM is that it allows you to create separate usernames and passwords for individual users or resources 
+and delegate access.
+-Granular permissions. Restrictions can be applied to requests. For example, you can allow the user to download information, but deny the user the ability to
+ update information through the policies.
+-Multifactor authentication (MFA). IAM supports MFA, in which users provide their username and password plus a one-time password from their phone—a randomly 
+generated number used as an additional authentication factor.
+-Identity Federation. If the user is already authenticated, such as through a Facebook or Google account, IAM can be made to trust that authentication method 
+and then allow access based on it. This can also be used to allow users to maintain just one password for both on-premises and cloud environment work.
+-Free to use. There is no additional charge for IAM security. There is no additional charge for creating additional users, groups or policies.
+-PCI DSS compliance. The Payment Card Industry Data Security Standard is an information security standard for organizations that handle branded credit cards 
+from the major card schemes. IAM complies with this standard.
+-Password policy. The IAM password policy allows you to reset a password or rotate passwords remotely. You can also set rules, such as how a user should pick 
+a password or how many attempts a user may make to provide a password before being denied access.

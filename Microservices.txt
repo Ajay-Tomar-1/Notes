@@ -1,0 +1,51 @@
+Microservices are a hot topic in system design interviews. It is important to know why we use them instead of monolithic systems. The short answer is: Scalability. The detailed one would be:
+
+Advantages:
+1) The microservice architecture is easier to reason about/design for a complicated system.
+2) They allow new members to train for shorter periods and have less context before touching a system.
+3) Deployments are fluid and continuous for each service.
+4) They allow decoupling service logic on the basis of business responsibility
+5) They are more available as a single service having a bug does not bring down the entire system. This is called a single point of failure.
+6) Individual services can be written in different languages.
+7) The developer teams can talk to each other through API sheets instead of working on the same repository, which requires conflict resolution.
+8) New services can be tested easily and individually. The testing structure is close to unit testing compared to a monolith.
+
+Microservices are at a disadvantage to Monoliths in some cases. Monoliths are favorable when:
+1) The technical/developer team is very small
+2) The service is simple to think of as a whole.
+3) The service requires very high efficiency, where network calls are avoided as much as possible.
+4) All developers must have context of all services.
+
+
+Others:
+A monolith a single app.
+    Pros:
+        -> Good for small cohesive teams
+        -> Fewer moving parts
+        -> Less duplication (boiler plate code e.g. for testing only needs to be deployed once).
+        -> Faster. No calls over the network, all calls are within the app.
+    Cons:
+        -> Onboarding is harder. New developers need to understand the whole codebase because things are connected.
+        -> Deployments are complicated. Even a small update means the whole app needs to get deployed anew. Thorough testing and constant monitoring is required.
+        -> Single point of failure! If anything fails, the whole app fails.
+
+A microservice is a network of apps.
+    Pros:
+        -> Easier to scale the codebase. Adding new components is straight forward because the connection between components is clearly mapped out.
+        -> Easier for new developers. New developers need only learn the context of a single service (not the whole system) and then they can get to work on that.
+        -> Easier to work in parallel. Reasons above apply.
+        -> Easier to scale servers. You can easily see what services are being used and scale server requirements for them.
+    Cons:
+        -> Harder to design. When should two services be merged? Dyads in the dependency graph should be merged. Needs skilled architects.
+
+
+
+Network latency, sometimes called lag, is the term used to describe delays in communication over a network. Latency meaning in networking 
+is best thought of as the amount of time it takes for a packet of data to be captured, transmitted, processed through multiple devices, 
+then received at its destination and decoded.
+
+Loose coupling is an approach to interconnecting the components in a system or network so that those components, also called elements, 
+depend on each other to the least extent practicable. Coupling refers to the degree of direct knowledge that one element has of another.
+
+SOA, or service-oriented architecture, defines a way to make software components reusable via service interfaces. These interfaces utilize common 
+communication standards in such a way that they can be rapidly incorporated into new applications without having to perform deep integration each time.

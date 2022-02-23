@@ -1,0 +1,29 @@
+//  Link: https://subscription.packtpub.com/book/virtualization-and-cloud/9781788393362/1/ch01lvl1sec10/cloud-service-models-and-cloud-deployment-models
+
+Cloud service models  
+All workloads in a cloud scenario use resources from an extremely large resource pool that is operated (managed) by you or a cloud service provider. These
+ resources include servers, storage, networks, applications, services, and much more.
+
+The cloud service models describe to what extent your resources are managed by yourself or by your cloud service providers.
+
+The offers are mainly categorized into the following service models:
+
+On-premises: On-premises describes a model in which the user manages all resources alone.
+Infrastructure as a Service (IaaS): IaaS describes a model in which the cloud provider gives the consumer the ability to create and configure resources from 
+the computing layer upwards. This includes virtual machines, containers, networks, appliances, and many other infrastructure-related resources.
+Platform as a Service (PaaS): PaaS gives the consumer an environment from the operating system upwards. So the consumer is not responsible for the underlying 
+infrastructure.
+Software as a Service (SaaS): SaaS is the model with the lowest levels of control and required management. A SaaS application is reachable from multiple 
+clients and consumers, and the owning consumer doesn't have any control over the backend, except for application-related management tasks.
+
+
+Cloud deployment models
+Cloud deployment models describe the way in which resources are provided in the cloud.
+
+Which cloud deployment models are available?
+1. The deployment model based on the on-premises service model is called the private cloud. A private cloud is an environment/infrastructure, built and 
+operated by a single organization, which is only for internal use.
+2. The deployment model based on the IaaS and the PaaS service model is called the public cloud. A public cloud is an offer from a service provider 
+(for example, Microsoft Azure), that can be accessed by the public. This includes individuals as well as companies.
+3. There is still a third deployment model available, which is the hybrid cloud. A hybrid cloud combines parts of the private and public clouds. It is defined 
+as a private cloud environment at the consumer's site, as well as the public cloud infrastructure that the consumer uses.

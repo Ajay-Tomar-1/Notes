@@ -1,0 +1,121 @@
+ACID properties of transactions
+In the context of transaction processing, the acronym ACID refers to the four key properties of a transaction: atomicity, consistency, isolation, and 
+durability.
+
+Atomicity -
+All changes to data are performed as if they are a single operation. That is, all the changes are performed, or none of them are.
+For example, in an application that transfers funds from one account to another, the atomicity property ensures that, if a debit is made 
+successfully from one account, the corresponding credit is made to the other account.
+Consistency -
+Data is in a consistent state when a transaction starts and when it ends.
+For example, in an application that transfers funds from one account to another, the consistency property ensures that the total value of funds in 
+both the accounts is the same at the start and end of each transaction.
+Isolation -
+The intermediate state of a transaction is invisible to other transactions. As a result, transactions that run concurrently appear to be serialized.
+For example, in an application that transfers funds from one account to another, the isolation property ensures that another transaction sees the 
+transferred funds in one account or the other, but not in both, nor in neither.
+Durability -
+After a transaction successfully completes, changes to data persist and are not undone, even in the event of a system failure.
+For example, in an application that transfers funds from one account to another, the durability property ensures that the changes made to each account 
+will not be reversed.
+
+
+OR
+
+What are ACID properties in a database?
+A transaction is a collection of instructions. To maintain the integrity of a database, all transactions must obey ACID properties. ACID is an acronym for
+atomicity, consistency, isolation, and durability. Let’s go over each of these properties.
+
+1. Atomicity
+A transaction is an atomic unit; hence, all the instructions within a transaction will successfully execute, or none of them will execute. The following 
+transaction transfers 20 dollars from Alice’s bank account to Bob’s bank account. If any of the instructions fail, the entire transaction should abort 
+and rollback.
+A transaction to transfer 20 pounds from Alice's account to Bob's account.
+
+2. Consistency
+A database is initially in a consistent state, and it should remain consistent after every transaction. Suppose that the transaction in the previous 
+example fails after Write(A_b) and the transaction is not rolled back; then, the database will be inconsistent as the sum of Alice and Bob’s money, 
+after the transaction, will not be equal to the amount of money they had before the transaction.
+
+3. Isolation
+If the multiple transactions are running concurrently, they should not be affected by each other; i.e., the result should be the same as the result 
+obtained if the transactions were running sequentially. Suppose B_bal is initially 100. If a context switch occurs after B_bal *= 20, then the changes 
+should only be visible to T2 once T1 commits. This ensures consistency in the data and prevents incorrect results.
+T1 adds 20% interest to Bob's savings account and T2 adds 20 pounds to Bob's account.
+
+4. Durability
+Changes that have been committed to the database should remain even in the case of software and system failure. For instance, if Bob’s account 
+contains $120, this information should not disappear upon system or software failure.
+
+Link: https://www.educative.io/edpresso/what-are-acid-properties-in-a-database?https://www.educative.io/courses/grokking-the-object-oriented-design-interview?aid=5082902844932096&aid=5082902844932096&utm_source=google&utm_medium=cpc&utm_campaign=edpresso-dynamic&utm_term=&utm_campaign=Dynamic+-+Edpresso&utm_source=adwords&utm_medium=ppc&hsa_acc=5451446008&hsa_cam=8092184362&hsa_grp=86276435689&hsa_ad=397226000870&hsa_src=g&hsa_tgt=dsa-837376625453&hsa_kw=&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gclid=CjwKCAjw4qCKBhAVEiwAkTYsPF89Esgnkyh2ABsf8D2M0rH_HkVF8BfauzAbbz9o6mhMsLcXJPI1TBoCeDoQAvD_BwE
+
+
+ACID Use Case Example
+Financial institutions will almost exclusively use ACID databases. Money transfers depend on the atomic nature of ACID.
+An interrupted transaction which is not immediately removed from the database can cause a lot of issues. Money could be debited from one account and, 
+due to an error, never credited to another.
+
+Which Databases are ACID compliant?
+One safe way to make sure your database is ACID compliant is to choose a relational database management system. These include MySQL, PostgreSQL, Oracle, 
+SQLite, and Microsoft SQL Server.
+Some NoSQL DBMSs, such as Apache’s CouchDB or IBM’s Db2, also possess a certain degree of ACID compliance. However, the philosophy behind the NoSQL approach 
+to database management goes against the strict ACID rules. Hence, NoSQL databases are not the recommended choice for those who need strict environments.
+
+
+
+The BASE Model
+The rise of NoSQL databases provided a flexible and fluid way to manipulate data. As a result, a new database model was designed, reflecting these properties.
+The acronym BASE is slightly more confusing than ACID. However, the words behind it suggest ways in which the BASE model is different.
+
+BASE acronym standing for Basically Available, Soft state, Eventually consistent
+BASE stands for:
+
+Basically Available – Rather than enforcing immediate consistency, BASE-modelled NoSQL databases will ensure availability of data by spreading and 
+replicating it across the nodes of the database cluster.
+Soft State – Due to the lack of immediate consistency, data values may change over time. The BASE model breaks off with the concept of a database which 
+enforces its own consistency, delegating that responsibility to developers.
+Eventually Consistent – The fact that BASE does not enforce immediate consistency does not mean that it never achieves it. However, until it does, data 
+reads are still possible (even though they might not reflect the reality).
+
+
+OR
+
+BASE describes database processing germane to a NoSQL database, such as a data lake. An increasing number of data volumes and variability, 
+according to DAMA DMBoK, spurred the BASE philosophy. Its popularity rose in 2008. BASE providesless assurance than ACID, but it scales very well 
+and reacts well to rapid data changes. BASE construction has three properties:
+
+Basically Available: The system is guaranteed to be available in event of failure.
+Soft State: The state of the data could change without application interactions due to eventual consistency.
+Eventual Consistency: The system will be eventually consistent after the application input. The data will be replicated to different nodes and 
+will eventually reach a consistent state. But the consistency is not guaranteed at a transaction level.
+
+
+
+BASE Use Case Example
+Marketing and customer service companies who deal with sentiment analysis will prefer the elasticity of BASE when conducting their social network research. 
+Social network feeds are not well structured but contain huge amounts of data which a BASE-modeled database can easily store.
+
+Which Databases are Using the BASE Model?
+Just as SQL databases are almost uniformly ACID compliant, NoSQL databases tend to conform to BASE principles. MongoDB, Cassandra and Redis are among the 
+most popular NoSQL solutions, together with Amazon DynamoDB and Couchbase.
+
+
+
+ACID vs. BASE: Which One is Good for You?
+It is not possible to give a straight answer to the question of which database model is better. Therefore, a decision must be reached by considering 
+all the aspects of the project.
+Given their highly structured nature, ACID-compliant databases will be a better fit for those who require consistency, predictability, and reliability.
+
+Those who consider growth to be among their priorities will likely want to choose the BASE model, because it enables easier scaling up and provides more 
+flexibility. However, BASE also requires developers who will know how to deal with the limitations of the model.
+
+ACID and BASE are consistency models for RDBMS and NoSQL respectively. ACID transactions are far more pessimistic i.e. they are more worried about data safety. 
+In the NoSQL database world, ACID transactions are less fashionable as some databases have loosened the requirements for immediate consistency, data freshness
+ and accuracy in order to gain other benefits, like scalability and resiliency.
+
+BASE stands for -
+
+Basic Availability - The database appears to work most of the time.
+Soft-state - Stores don't have to be write-consistent, nor do different replicas have to be mutually consistent all the time.
+Eventual consistency - Stores exhibit consistency at some later point (e.g., lazily at read time).
+Therefore BASE relaxes consistency to allow the system to process request even in an inconsistent state.
